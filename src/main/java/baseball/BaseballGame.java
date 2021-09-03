@@ -3,6 +3,7 @@ package baseball;
 import utils.RandomUtils;
 
 import java.util.Arrays;
+import java.util.OptionalInt;
 import java.util.Scanner;
 
 public class BaseballGame {
@@ -16,9 +17,9 @@ public class BaseballGame {
 				gameRandomNum[i] = Rnum;
 			}
 		}
-		for(int i = 0;i<userInputNum.length;i++) {
-			userInputNum[i] = 0;
-		}
+
+		//이런 부분은 다른게 바꿀수 있지 않을까요. 인텔리 제이를 사용하면 alt + enter를 누르면 코드를 자동으로 수정할수 있어요 나중에 꼭 사용해보세요
+		Arrays.fill(userInputNum, 0);
 	}
 	
 	public void userInput(Scanner sc) {
@@ -63,11 +64,18 @@ public class BaseballGame {
 	
 	public boolean compareArray(int[] array,int keyNum) {
 		boolean checkBool = false;
-		for(int i = 0;i<array.length;i++) {
-			if(array[i]==keyNum) {
-				checkBool = true;
-			}
-		}
-		return checkBool;
+
+		//stream을 사용하면 더 좋지 않았을까 싶어요
+		OptionalInt res = Arrays.stream(array).filter(a -> a == keyNum).findAny();
+		//밑에 코드를 이렇게 줄일수 있어요
+
+//		for(int i = 0;i<array.length;i++) {
+//			if(array[i]==keyNum) {
+//				checkBool = true;
+//			}
+//		}
+		return res.orElse(0) != 0;
 	}
+	//새로운 랜덤 숫자를 생성해야할 때는 매번 새로운 객체를 다시 생성해야하는데 좀더 재사용 가능한 객체로 만들어보는것도 좋을 것 같다는 생각이들어요
+
 }
