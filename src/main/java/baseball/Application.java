@@ -3,24 +3,24 @@ package baseball;
 import java.util.Scanner;
 
 public class Application {
-    public static void main(String[] args) {
-        final Scanner scanner = new Scanner(System.in);
-        
-        while(true) {
-        	BaseballGame BBG= new BaseballGame();
-        	do{
-        		BBG.userInput(scanner);
-        	}while((!BBG.compareNum()));
-        	System.out.println("3°³ÀÇ ¼ıÀÚ¸¦ ¸ğµÎ ¸ÂÈ÷¼Ì½À´Ï´Ù! °ÔÀÓ Á¾·á");
-			System.out.print("°ÔÀÓÀ» »õ·Î ½ÃÀÛÇÏ·Á¸é 1, Á¾·áÇÏ·Á¸é 2¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
-        	int restartNum = scanner.nextInt();
-        	if(restartNum==2) {
-        		break;
-        	}
-        	else {
-        		continue;
-        	}
-        }
-        
-    }
+	public static void main(String[] args) {
+		final Scanner scanner = new Scanner(System.in);
+
+		while(true) {
+			BaseballGame BBG = new BaseballGame();
+			do{
+				BBG.userInput(scanner);
+			}while((!BBG.compareNum()));
+			System.out.println("3ê°œì˜ ìˆ«ìë¥¼ ëª¨ë‘ ë§íˆì…¨ìŠµë‹ˆë‹¤! ê²Œì„ ì¢…ë£Œ");
+			System.out.print("ê²Œì„ì„ ìƒˆë¡œ ì‹œì‘í•˜ë ¤ë©´ 1, ì¢…ë£Œí•˜ë ¤ë©´ 2ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+			int restartNum = scanner.nextInt();
+			if(restartNum==2) {
+				break;
+			}
+			else {
+				continue;
+			}
+		}
+
+	}
 }

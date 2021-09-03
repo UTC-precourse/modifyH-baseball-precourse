@@ -20,10 +20,10 @@ public class BaseballGame {
 			userInputNum[i] = 0;
 		}
 	}
-	
+
 	public void userInput(Scanner sc) {
 		String input;
-		System.out.print("¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		System.out.print("ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 		input = sc.next();
 		if(input.length()==3) {
 			for(int i = 0;i<userInputNum.length;i++) {
@@ -31,11 +31,11 @@ public class BaseballGame {
 			}
 		}
 		else {
-			throw new IllegalArgumentException("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
+			throw new IllegalArgumentException("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
 		}
 	}
-	
-	
+
+
 	public boolean compareNum() {
 		int strike = 0, ball = 0;
 		for(int i = 0; i<gameRandomNum.length;i++) {
@@ -48,19 +48,19 @@ public class BaseballGame {
 		}
 		ball-=strike;
 		if(strike==3) {
-			System.out.println(strike+"½ºÆ®¶óÀÌÅ©");
+			System.out.println(strike+"ìŠ¤íŠ¸ë¼ì´í¬");
 			return true;
 		}
 		else if(strike!=0||ball!=0){
-			System.out.println(ball+"º¼ "+strike+"½ºÆ®¶óÀÌÅ©");
+			System.out.println(ball+"ë³¼ "+strike+"ìŠ¤íŠ¸ë¼ì´í¬");
 			return false;
 		}
 		else {
-			System.out.println("³´½Ì");
+			System.out.println("ë‚«ì‹±");
 			return false;
 		}
 	}
-	
+
 	public boolean compareArray(int[] array,int keyNum) {
 		boolean checkBool = false;
 		for(int i = 0;i<array.length;i++) {
